@@ -1,0 +1,17 @@
+package com.zzz.member.dao;
+
+import com.zzz.member.entity.MemberLoginLogEntity;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * 会员登录记录
+ * 
+ * @author zjd
+ * @email ${email}
+ * @date 2021-01-28 14:26:32
+ */
+@Mapper
+public interface MemberLoginLogDao extends BaseMapper<MemberLoginLogEntity> {
+	
+}

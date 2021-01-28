@@ -1,0 +1,18 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: mall-order
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: zjd
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mall-oms?serverTimezone=Hongkong&useUnicode=true&characterEncoding=utf8&useSSL=false
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/order/*.xml
+  type-aliases-package: com.zzz.cloud.entity
+  global-config:
+    db-config:
+      id-type: auto
