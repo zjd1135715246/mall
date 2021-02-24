@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: mall-product
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: zjd
@@ -16,3 +20,8 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+      logic-delete-field: 1
+      logic-not-delete-value: 0
+logging:
+  level:
+    com.zzz.product: debug

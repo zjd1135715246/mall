@@ -1,0 +1,41 @@
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    username: zjd
+#    password: 123456
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/mall-sms?serverTimezone=Hongkong&useUnicode=true&characterEncoding=utf8&useSSL=false
+
+spring:
+  cloud:
+    gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "https://docs.spring.io"
+#            allowedHeaders: "*"
+#            allowedMethods:
+#              - GET
+      routes:
+        - id: test-routes
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+        - id: third-routes
+          uri: http://127.0.0.1:3000
+          predicates:
+            - Path=/api/third/**
+          filters:
+            - RewritePath=/api/third/(?<segment>.*),/$\{segment}
+        - id: product-routes
+          uri: http://127.0.0.1:7001
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+        - id: admin-routes
+          uri: http://127.0.0.1:8080
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}

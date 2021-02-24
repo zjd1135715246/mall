@@ -12,6 +12,7 @@ class ProductApplicationTests {
     @Autowired
     BrandService brandService;
 
+
     @Test
     void contextLoads() {
         BrandEntity brandEntity = new BrandEntity();
@@ -21,8 +22,6 @@ class ProductApplicationTests {
         brandEntity.setShowStatus(0);
         brandEntity.setFirstLetter("");
         brandEntity.setSort(0);
-
-
         brandService.save(brandEntity);
     }
 

@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 9525ccbc-eaa3-44df-9f00-a554f60f8f56
+        file-extension: yaml
+        ext-config:
+          - data-id: mall-gateway.yaml
+            refresh: true
+            group: DEFAULT_GROUP
+server:
+  port: 8888
+
